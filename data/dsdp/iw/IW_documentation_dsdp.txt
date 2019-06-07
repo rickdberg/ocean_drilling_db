@@ -1,0 +1,233 @@
+                                  DSDP/Interstitial Water 3/87
+
+                 ===============================
+                 =  DEEP SEA DRILLING PROJECT  =
+                 =   INTERSTITIAL WATER CHEM   =
+                 ===============================
+
+ I.  INTRODUCTION
+
+
+ A.  BACKGROUND AND METHODS
+
+     Interstitial water was extracted aboard the R/V Glomar
+     Challenger from sediment samples that were evenly spaced down
+     the hole.  The expressed fluids were normally divided into
+     several aliquots, one of which was used immediately for
+     shipboard determination of any or all of the following:  pH,
+     alkalinity, salinity, chlorinity, calcium, magnesium and
+     rarely, ammonia, phosphate and silica.  Remaining aliquots were
+     packaged and shipped to participating investigators ashore.
+     Please refer to the individual contributions from these
+     investigators printed in the Initial Reports (see field=
+     REFERENCE) and to the article listed in the bibliography below
+     for detailed information about techniques of pore fluid
+     extraction and analysis.
+
+     The information recorded in this database represents the
+     overwhelming majority of pore water chemistry data published
+     in the Initial Reports.  However, certain types of results
+     (e.g.  isotope data) were not encoded, therefore reference
+     to the Initial Reports is essential when utilizing these
+     data.  When no data or limited data from a site was
+     published in the Initial Report then data was entered into
+     the database directly from the lab notebook compiled aboard
+     the vessel.  Microfilm of most of these notebooks is
+     available from the National Geophysical Data Center in
+     Boulder, Colorado.
+
+
+ B.  LEGS IN THE DATA SET
+
+     This database contains data from every Leg except:
+            46, 66, 83, 88, 90, and 94.
+
+
+ C.  REFERENCES
+
+     Gieskes, J. M., 1973.  Interstitial water studies Leg 15.
+     Alkalinity, pH, Mg, Ca, Si, PO4, and NH4.  In Initial
+     Reports of the Deep Sea Drilling Project, Vol 20, pp
+     813-829.
+
+
+ II.  FORMAT AND FIELD DESCRIPTIONS
+
+
+  A.  DATA FORMAT
+
+     Record length is 96 characters (14718 records)
+
+     COLUMN    FIELD                                  FORMAT
+     ======    ===================================    ======
+      1-2      LEG NUMBER                             A2
+      3-5      SITE                                   A3
+      6-6      HOLE                                   A1
+      7-9      CORE                                   A3
+     10-11     SECTION                                A2
+     12-15     TOP OF SAMPLED INTERVAL      (cm)      F4.1
+     16-19     BOTTOM OF SAMPLED INTERVAL   (cm)      F4.1
+     20-27     DEPTH TO CORE      (meters)            F8.2
+     28-35     DEPTH TO SAMPLE    (meters)            F8.2
+               CARD IDENTIFIER:
+      36          CARD TYPE *(see note below)         A1
+      37          CARD NUMBER                         I1
+      38       pH ELECTRODE TYPE                      A1
+     39-43     pH                                     F5.2
+      44       ALKALINITY MEASUREMENT TYPE            A1
+     45-49     ALKALINITY       (meq/l)               F5.2
+     50-54     SALINITY         (0/00)                F5.1
+     55-60     DATA FIELD #1                          F6.2
+     61-66     DATA FIELD #2                          F6.2
+     67-72     DATA FIELD #3                          F6.2
+     73-78     DATA FIELD #4                          F6.2
+     79-84     DATA FIELD #5                          F6.2
+     85-91     DATA FIELD #6                          F7.2
+     92-96     REFERENCE                              A5
+
+     *NOTE: there are some comment cards... if CARDTYPE='C' then
+            cols 38 - 96                              A59
+
+
+
+ B. FIELD DESCRIPTIONS
+
+    The definition of leg, site, hole, core and section may be
+    found in the explanatory notes.  In addition, the special
+    core designations, as well as the methods of sample labeling
+    and  calculating  absolute  sample  depths  are discussed.
+
+
+
+   TOP OF SAMPLED INTERVAL and BOTTOM OF SAMPLED INTERVAL:
+
+     The depth, in centimeters, within a section to the top or
+     bottom of the sediment sample.  Values are encoded with an
+     implicit decimal point.  An encoded value of 805 represents
+     80.5 centimeters.
+
+
+   DEPTH TO CORE:       (see formulae at end of this document)
+
+     The subbottom depth in meters to the top of the core.
+
+
+   DEPTH TO SAMPLE:      (see formulae at end of this document)
+
+     The subbottom depth in meters to the center of the sampled
+     interval.
+
+
+   CARD IDENTIFIER:
+
+           CARD TYPE:
+                "A" = data card    "C" = comment card
+
+           CARD NUMBER:
+
+                 A logical data record consists of all of the "A"
+                 cards with the identical DSDP label (cols 1-19).
+                 The field identifiers are CARD NUMBER specific,
+                 as shown under DATA FIELD below.
+
+     Not every card is present within one logical record and
+     duplicate card numbers  exist, however these records are
+     unique in that they  have different REFERENCEs, indicating
+     different sources.  If the CARD NUMBER is greater than 4 then
+     it will contain only additional pH and/or alkalinity values.
+
+
+   pH ELECTRODE TYPE:
+
+    "R" = combination      "P" = punch-in      "F" = flow-thru
+     See Gieskes, 1973 for further explanation.
+
+
+   pH:
+
+     Measured value of pH in units of pH.
+
+
+  ALKALINITY MEASUREMENT TYPE:
+
+     "C" = colorimetric "P" = potentiometric
+      See Gieskes, 1973 for further explanation.
+
+
+   ALKALINITY:
+
+     Calculated value of alkalinity.
+
+
+   SALINITY:
+
+     Salinity as measured with a hand-held Goldberg refractometer.
+
+   DATA FIELD #1 through #6:
+
+     Shown below is the ion name and the unit for each of the 24
+     CARD NUMBER-specific data fields.
+
+
+     DATA                      CARD IDENTIFIER
+     FIELD
+       #   |     A1      |     A2      |     A3      |     A4     |
+     ------|-------------|-------------|-------------|------------|
+        1  |     Ca      |     Sr      |    P2O5     |     Br     |
+           |   (mm/l)    |   (mm/l)    |   (um/l)    |   (mm/l)   |
+     ------|-------------|-------------|-------------|------------|
+        2  |     Mg      |     K       |     Cu      |     B      |
+           |   (mm/l)    |   (mm/l)    |   (um/l)    |   (mm/l)   |
+     ------|-------------|-------------|-------------|------------|
+        3  |     Cl      |     Mn      |     Fe      |     Rb     |
+           |   (o/oo)    |   (um/l)    |   (um/l)    |   (um/l)   |
+     ------|-------------|-------------|-------------|------------|
+        4  |     NH4     |     SO4     |     Li      |     Ni     |
+           |   (mm/l)    |   (mm/l)    | (um/l)/10   |   (um/l)   |
+     ------|-------------|-------------|-------------|------------|
+        5  |     PO4     |     Ba      |     Al      |   unused   |
+           |   (um/l)    |   (um/l)    |   (um/l)    |            |
+     ------|-------------|-------------|-------------|------------|
+        6  |     Si      |     Zn      |     Na      |    NO3     |
+           |   (um/l)    |   (um/l)    |   (mm/l)    |   (um/l)   |
+     ------|-------------|-------------|-------------|------------|
+
+
+   REFERENCE:
+
+     This five-character string holds the reference to the source
+     of the data in the record.   "LABNB"  denotes  values  taken
+     directly from the chemistry technician's shipboard notebook.
+
+     Otherwise:
+
+       COLUMN                 FIELD                      FORMAT
+      ========     ===============================      ========
+       92-93       Initial Report volume (1.. 96)          I2
+
+         94        modifier for 2-part volume              A1
+                          eg: '1', '2', 'A' or 'B'
+
+       95-96       chapter number                          I2
+
+
+       NGDC NOTE:  The modifier is shifted into the chapter number
+       field for a large number of entries from records 2112 through
+       4835.
+
+NGDC NOTES:  (list of deviations from field descriptions)
+
+Description of deviation                    Record Number(s)
+=====================================       ================
+Unidentified modifer for 2-part vol         between records 7086 and 7421
+
+
+
+
+Additional Notes:  Many cores in this file are "ssw" cores, which are
+in-situ measurements as described in this file.  These "ssw" cores are
+not searchable using the CD-ROM select software as individual cores,
+but may be copied or browsed by selecting the entire hole in which they
+occur.
+
+                                      DSDP Interstitial Water 3/87
