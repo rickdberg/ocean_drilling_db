@@ -1,2 +1,2 @@
 # Fully integrated Ocean Drilling Database for reactive-transport modeling
-Python package that integrates data from the four major ocean drilling databases. Includes data from the DSDP, ODP, IODP (JOIDES Resolution), and IODP (Chikyu). The integrated datasets are those applicable to reactive-transport modeling in marine sediments. Package expected to be published with full documentation in a data journal in Fall 2019.
+Python package that integrates data from the four major ocean drilling databases. Includes data from the DSDP, ODP, IODP (JOIDES Resolution), and IODP (Chikyu). The integrated datasets are those applicable to reactive-transport modeling in marine sediments. Package expected to be published with full documentation in a data journal date TBD.
